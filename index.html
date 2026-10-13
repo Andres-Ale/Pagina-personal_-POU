@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andres Herrera · Sobre mí</title>
+  <meta name="description" content="Presentación de Andres Herrera, estudiante de Técnico en Desarrollo de Software en la UCA.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c2333'/%3E%3Ctext x='16' y='22' font-size='15' text-anchor='middle' fill='%23fff' font-family='Georgia,serif'%3EAH%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <div class="hoja">
+    <header class="cabecera">
+      <p class="marca" data-edit="marca">Currículum personal</p>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Sobre mí</a></li>
+          <li><a href="academico.html">Académico</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="presentacion" aria-labelledby="nombre">
+        <figure class="foto" data-foto="inicio">
+          <button type="button" class="foto__caja" aria-label="Añadir o cambiar la foto">
+            <img class="foto__img" alt="" hidden>
+            <span class="foto__vacio">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Haz clic o arrastra una foto aquí</span>
+            </span>
+          </button>
+          <input class="foto__input" type="file" accept="image/*" hidden>
+          <figcaption>
+            <span data-edit="inicio-pie">Foto de perfil</span>
+            <button type="button" class="boton-sec foto__quitar" hidden>Quitar imagen</button>
+          </figcaption>
+        </figure>
+
+        <h1 id="nombre" data-edit="nombre-corto">Andres Herrera</h1>
+        <p class="rol" data-edit="inicio-rol">Estudiante de <em>Técnico en Desarrollo de Software</em> · UCA</p>
+      </section>
+
+      <section class="cuadros" aria-label="Información personal">
+        <article class="cuadro">
+          <section class="bloque" aria-labelledby="h-descripcion">
+            <h2 id="h-descripcion" data-edit="inicio-h-descripcion">Breve descripción</h2>
+            <p data-edit="inicio-descripcion">Me llamo <strong>Andres Herrera</strong>, estudio en la <strong>UCA</strong> y curso la carrera de <em>Técnico en Desarrollo de Software</em>.</p>
+          </section>
+
+          <section class="bloque" aria-labelledby="h-datos">
+            <h2 id="h-datos" data-edit="inicio-h-datos">Datos generales</h2>
+            <dl class="datos datos--dos">
+              <div>
+                <dt data-edit="inicio-dt-nombre">Nombre</dt>
+                <dd data-edit="inicio-dd-nombre">Andres Alessadro</dd>
+              </div>
+              <div>
+                <dt data-edit="inicio-dt-apellido">Apellido</dt>
+                <dd data-edit="inicio-dd-apellido">Herrera Orellana</dd>
+              </div>
+              <div>
+                <dt data-edit="inicio-dt-edad">Edad</dt>
+                <dd data-edit="inicio-dd-edad">20 años</dd>
+              </div>
+              <div>
+                <dt data-edit="inicio-dt-estatura">Estatura</dt>
+                <dd data-edit="inicio-dd-estatura">Alrededor de 1.68 m</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="bloque" aria-labelledby="h-carnet">
+            <h2 id="h-carnet" data-edit="inicio-h-carnet">Carnet</h2>
+            <p class="carnet"><strong data-edit="carnet">00159926</strong></p>
+          </section>
+        </article>
+      </section>
+
+      <aside class="aviso">
+        <p><strong>Todo el texto se puede editar:</strong> haz clic sobre él y escribe. <kbd>Enter</kbd> termina la edición, <kbd>Ctrl</kbd>+<kbd>B</kbd> pone negrita y <kbd>Ctrl</kbd>+<kbd>I</kbd> cursiva. Los cambios se guardan en este navegador.</p>
+      </aside>
+    </main>
+
+    <footer class="pie">
+      <div class="pie__fila">
+        <p class="estado" role="status" aria-live="polite"></p>
+        <button type="button" class="boton-sec" id="restablecer">Restablecer contenido</button>
+      </div>
+      <nav class="paginacion" aria-label="Paginación">
+        <a href="academico.html" rel="next">Académico →</a>
+      </nav>
+      <p class="derechos"><small data-edit="pie-copy">© 2026 Andres Herrera · UCA</small></p>
+    </footer>
+  </div>
+</body>
+</html>
