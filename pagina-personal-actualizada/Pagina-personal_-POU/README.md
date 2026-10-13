@@ -1,6 +1,6 @@
 # About Me · Andres Herrera
 
-Sitio web personal de tipo **"About me"** con aspecto de currículum, hecho con HTML5 semántico, CSS y JavaScript puro (sin librerías ni dependencias).
+Sitio web personal de tipo About me o sobre mi, hecho con HTML5 semántico, CSS y java 
 
 ## Páginas
 
@@ -14,10 +14,10 @@ Las tres páginas comparten la misma navegación (menú superior y botón de pá
 
 ## Cómo usarlo
 
-1. Abre `index.html` en el navegador (no necesita servidor).
-2. **Editar texto:** haz clic sobre cualquier texto y escribe. `Enter` termina la edición; `Ctrl+B` y `Ctrl+I` aplican negrita y cursiva. En las listas, `Enter` crea un elemento nuevo y `Retroceso` sobre un elemento vacío lo elimina.
-3. **Añadir imagen:** haz clic en el cuadro de imagen (o arrastra un archivo encima). El botón *Quitar imagen* la elimina.
-4. Todo se guarda automáticamente en el navegador (`localStorage`). El botón *Restablecer contenido* del pie vuelve al contenido original.
+1. Abrir `index.html` en el navegador (no necesita servidor).
+2. **Editar texto:** al hacer clic sobre cualquier texto y tocar la tecla de Enter y haga click fuera del cuadro para terminar la edición Ctrl+B` y Ctrl+I aplican negrita y cursiva, En las listas, Enter crea un elemento nuevo y Retroceso sobre un elemento vacío lo elimina
+3. **Añadir imagen:** haz clic en el cuadro de imagen (o arrastra un archivo encima), el botón *Quitar imagen* la elimina.
+4. Todo se guarda automáticamente en el navegador localStorage, El botón *Restablecer contenido* del pie vuelve al contenido original (use como apoyo la IA para el desarrollo de la pagina mas no todo el codigo y el trabajo esta hecha por ella)
 
 ## Estructura
 
@@ -43,13 +43,6 @@ about-me/
 - Rama `main`: versión estable.
 - Ramas `feature/*`: una por cada bloque de trabajo (estilos y script, páginas), integradas en `main` con `git merge --no-ff`.
 - Mensajes de commit en español con prefijo: `chore:`, `feat:`, `docs:`.
-
-Para subir el proyecto a GitHub:
-
-```bash
-git remote add origin https://github.com/Andres-Ale/<nombre-del-repositorio>.git
-git push -u origin main --tags
-```
 
 ## Autor
 
