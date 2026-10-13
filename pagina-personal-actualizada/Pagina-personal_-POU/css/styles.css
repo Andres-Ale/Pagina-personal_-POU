@@ -1,0 +1,554 @@
+/* =========================================================
+   About Me · Andres Herrera
+   Estilo "currículum": hoja de papel sobre un escritorio claro
+   ========================================================= */
+
+:root {
+  --fondo: #e7e2d7;
+  --papel: #fffdf9;
+  --tarjeta: #ffffff;
+  --tinta: #1c2333;
+  --tinta-suave: #5b6478;
+  --linea: #ddd6c8;
+  --linea-fuerte: #b9b09d;
+  --acento: #b0442a;
+  --acento-oscuro: #8f3620;
+  --acento-suave: #f6e6df;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --radio: 4px;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--fondo);
+  background-image: radial-gradient(circle at 20% 0%, #f2ede2 0, transparent 55%);
+  color: var(--tinta);
+  font: 1rem/1.65 var(--sans);
+}
+
+/* ---------- Accesibilidad ---------- */
+
+.saltar {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  z-index: 10;
+  padding: 8px 14px;
+  background: var(--tinta);
+  color: #fff;
+  border-radius: var(--radio);
+}
+
+.saltar:focus {
+  left: 8px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
+/* ---------- Hoja ---------- */
+
+.hoja {
+  max-width: 900px;
+  margin: clamp(0px, 3vw, 36px) auto;
+  background: var(--papel);
+  border-top: 6px solid var(--tinta);
+  border-radius: 6px;
+  box-shadow:
+    0 18px 50px -18px rgba(28, 35, 51, 0.35),
+    0 2px 6px rgba(28, 35, 51, 0.08);
+}
+
+/* ---------- Cabecera y navegación ---------- */
+
+.cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 18px clamp(20px, 5vw, 44px);
+  border-bottom: 1px solid var(--linea);
+}
+
+.marca {
+  margin: 0;
+  font: 600 0.8rem/1.2 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--tinta);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.menu a:hover {
+  background: var(--acento-suave);
+}
+
+.menu a[aria-current="page"] {
+  background: var(--tinta);
+  color: #fff;
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+  display: grid;
+  gap: 28px;
+  padding: clamp(24px, 5vw, 44px);
+}
+
+.presentacion {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+h1 {
+  margin: 14px 0 0;
+  max-width: 100%;
+  font: 700 clamp(2rem, 5vw, 2.9rem) / 1.1 var(--serif);
+  letter-spacing: -0.01em;
+}
+
+.rol {
+  margin: 0;
+  max-width: 100%;
+  color: var(--tinta-suave);
+  font-size: 1.05rem;
+}
+
+/* ---------- Cuadro de imagen ---------- */
+
+.foto {
+  width: min(100%, 240px);
+  margin: 0;
+}
+
+.foto--banner {
+  width: 100%;
+}
+
+.foto__caja {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  overflow: hidden;
+  border: 2px dashed var(--linea-fuerte);
+  border-radius: var(--radio);
+  background: repeating-linear-gradient(45deg, #faf6ec, #faf6ec 10px, #f4eee0 10px, #f4eee0 20px);
+  color: var(--tinta-suave);
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.foto--banner .foto__caja {
+  aspect-ratio: 3 / 1;
+}
+
+.foto__caja:hover,
+.foto--arrastrando .foto__caja {
+  border-color: var(--acento);
+  color: var(--acento-oscuro);
+}
+
+.foto--arrastrando .foto__caja {
+  background: var(--acento-suave);
+}
+
+.foto--tiene-imagen .foto__caja {
+  border-style: solid;
+  border-color: var(--tinta);
+}
+
+.foto__img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foto__vacio {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 16px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.foto--tiene-imagen .foto__vacio {
+  display: none;
+}
+
+.foto figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
+  margin-top: 10px;
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+}
+
+/* ---------- Cuadros de texto ---------- */
+
+.cuadros {
+  display: grid;
+  gap: 20px;
+}
+
+.cuadros--rejilla {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cuadro--ancho {
+  grid-column: 1 / -1;
+}
+
+.cuadro {
+  display: grid;
+  align-content: start;
+  gap: 26px;
+  padding: clamp(18px, 3vw, 28px);
+  background: var(--tarjeta);
+  border: 1px solid var(--linea);
+  border-top: 4px solid var(--acento);
+  border-radius: var(--radio);
+  box-shadow: 0 1px 2px rgba(28, 35, 51, 0.04);
+}
+
+.cuadro--carnet {
+  align-self: start;
+  background: linear-gradient(135deg, #ffffff 40%, var(--acento-suave));
+}
+
+.bloque {
+  display: grid;
+  gap: 12px;
+}
+
+.cuadro p {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--linea);
+  color: var(--acento-oscuro);
+  font: 700 0.78rem/1.3 var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Datos en pares término / valor */
+
+.datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 28px;
+  margin: 0;
+}
+
+.datos--dos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.datos > div {
+  padding-left: 12px;
+  border-left: 3px solid var(--acento-suave);
+}
+
+.datos dt {
+  color: var(--tinta-suave);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.datos dd {
+  margin: 2px 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+address {
+  font-style: normal;
+}
+
+.carnet {
+  font-family: var(--mono);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  letter-spacing: 0.14em;
+}
+
+.lista {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.lista li {
+  padding-left: 4px;
+}
+
+.lista li + li {
+  margin-top: 8px;
+}
+
+.lista li::marker {
+  color: var(--acento);
+}
+
+.accion {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--acento-oscuro);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.accion:hover {
+  color: var(--tinta);
+}
+
+/* ---------- Aviso de edición ---------- */
+
+.aviso {
+  padding: 12px 16px;
+  background: #f3efe6;
+  border-left: 4px solid var(--tinta);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+}
+
+.aviso strong {
+  color: var(--tinta);
+}
+
+kbd {
+  padding: 0 5px;
+  background: #fff;
+  border: 1px solid var(--linea-fuerte);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font: 0.8em var(--mono);
+}
+
+/* ---------- Texto editable ---------- */
+
+[data-edit],
+[data-lista] > li {
+  min-width: 2ch;
+  border-radius: 3px;
+  outline: 2px dashed transparent;
+  outline-offset: 3px;
+  cursor: text;
+  caret-color: var(--acento);
+  transition: outline-color 0.15s ease, background-color 0.15s ease;
+}
+
+[data-edit]:hover,
+[data-lista] > li:hover {
+  outline-color: rgba(176, 68, 42, 0.4);
+}
+
+[data-edit]:focus,
+[data-lista] > li:focus {
+  background: #fff4ee;
+  outline: 2px solid var(--acento);
+}
+
+h1[data-edit],
+.rol[data-edit] {
+  min-height: 1.2em;
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+  display: grid;
+  gap: 14px;
+  padding: 0 clamp(20px, 5vw, 44px) 28px;
+}
+
+.pie__fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--linea);
+}
+
+.estado {
+  min-height: 1.4em;
+  margin: 0;
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+}
+
+.boton-sec {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--linea-fuerte);
+  border-radius: 999px;
+  color: var(--tinta);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.boton-sec:hover {
+  border-color: var(--acento);
+  color: var(--acento-oscuro);
+}
+
+.paginacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.paginacion a {
+  padding: 8px 18px;
+  background: var(--tinta);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.paginacion a:hover {
+  background: var(--acento-oscuro);
+}
+
+.paginacion a[rel="next"] {
+  margin-left: auto;
+}
+
+.derechos {
+  margin: 0;
+  color: var(--tinta-suave);
+  text-align: center;
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+
+@media (max-width: 720px) {
+  .cuadros--rejilla,
+  .datos--dos {
+    grid-template-columns: 1fr;
+  }
+
+  .foto--banner .foto__caja {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ---------- Impresión (como currículum en papel) ---------- */
+
+@page {
+  margin: 14mm;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .hoja {
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .menu,
+  .aviso,
+  .pie__fila,
+  .paginacion,
+  .foto__quitar,
+  .accion,
+  .saltar {
+    display: none !important;
+  }
+
+  .foto:not(.foto--tiene-imagen) {
+    display: none;
+  }
+
+  [data-edit],
+  [data-lista] > li {
+    outline: none !important;
+  }
+
+  .cuadro {
+    break-inside: avoid;
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andres Herrera · Información académica</title>
+  <meta name="description" content="Carnet, año de estudio, carrera, correo y GitHub de Andres Herrera.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c2333'/%3E%3Ctext x='16' y='22' font-size='15' text-anchor='middle' fill='%23fff' font-family='Georgia,serif'%3EAH%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <div class="hoja">
+    <header class="cabecera">
+      <p class="marca" data-edit="marca">Currículum personal</p>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html">Sobre mí</a></li>
+          <li><a href="academico.html" aria-current="page">Académico</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="presentacion" aria-labelledby="titulo">
+        <figure class="foto foto--banner" data-foto="academico">
+          <button type="button" class="foto__caja" aria-label="Añadir o cambiar la imagen">
+            <img class="foto__img" alt="" hidden>
+            <span class="foto__vacio">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Haz clic o arrastra una imagen aquí</span>
+            </span>
+          </button>
+          <input class="foto__input" type="file" accept="image/*" hidden>
+          <figcaption>
+            <span data-edit="academico-pie">Imagen de la página</span>
+            <button type="button" class="boton-sec foto__quitar" hidden>Quitar imagen</button>
+          </figcaption>
+        </figure>
+
+        <h1 id="titulo" data-edit="academico-titulo">Información académica</h1>
+        <p class="rol" data-edit="academico-rol">Carnet, estudios y datos de contacto</p>
+      </section>
+
+      <section class="cuadros cuadros--rejilla" aria-label="Datos académicos">
+        <article class="cuadro cuadro--carnet">
+          <section class="bloque" aria-labelledby="h-carnet">
+            <h2 id="h-carnet" data-edit="academico-h-carnet">Carnet</h2>
+            <p class="carnet"><strong data-edit="carnet">00159926</strong></p>
+          </section>
+        </article>
+
+        <article class="cuadro">
+          <section class="bloque" aria-labelledby="h-estudios">
+            <h2 id="h-estudios" data-edit="academico-h-estudios">Estudios</h2>
+            <dl class="datos">
+              <div>
+                <dt data-edit="academico-dt-anio">Año de estudio</dt>
+                <dd data-edit="academico-dd-anio">Primer año, segundo ciclo, bloque 2</dd>
+              </div>
+              <div>
+                <dt data-edit="academico-dt-carrera">Carrera</dt>
+                <dd data-edit="academico-dd-carrera">Técnico en Desarrollo de Software</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="bloque" aria-labelledby="h-contacto">
+            <h2 id="h-contacto" data-edit="academico-h-contacto">Contacto</h2>
+            <address>
+              <dl class="datos">
+                <div>
+                  <dt data-edit="academico-dt-correo">Correo</dt>
+                  <dd>
+                    <span data-edit="academico-dd-correo">00159926@uca.edu.sv</span>
+                    <a class="accion" href="mailto:00159926@uca.edu.sv" data-fuente="academico-dd-correo" data-plantilla="mailto:{}">Enviar correo</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt data-edit="academico-dt-github">GitHub</dt>
+                  <dd>
+                    <span data-edit="academico-github-etiqueta">Usuario:</span>
+                    <strong data-edit="academico-github-usuario">Andres-Ale</strong>
+                    <a class="accion" href="https://github.com/Andres-Ale" target="_blank" rel="noopener" data-fuente="academico-github-usuario" data-plantilla="https://github.com/{}">Ver perfil</a>
+                  </dd>
+                </div>
+              </dl>
+            </address>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie__fila">
+        <p class="estado" role="status" aria-live="polite"></p>
+        <button type="button" class="boton-sec" id="restablecer">Restablecer contenido</button>
+      </div>
+      <nav class="paginacion" aria-label="Paginación">
+        <a href="index.html" rel="prev">← Sobre mí</a>
+        <a href="perfil.html" rel="next">Perfil →</a>
+      </nav>
+      <p class="derechos"><small data-edit="pie-copy">© 2026 Andres Herrera · UCA</small></p>
+    </footer>
+  </div>
+</body>
+</html>
